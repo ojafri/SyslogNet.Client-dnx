@@ -1,8 +1,10 @@
 ﻿{
   "version": "0.1.0-*",
-  "description": "SyslogNet.Client-dnx Class Library",
+  "title": "SyslogNet.Client-dnx",
+  "description": "SyslogNet.Client-dnx Class Library is based on dnx project and is a fork of SyslogNet.Client nuget. The additional feature is to pass X509Certificate when using encrypted TCP",
+  "summary": "dnx based SyslogNet.Client Class Library",
   "authors": [ "OJafri" ],
-  "tags": [ "dnx", "net46", "syslog" ],
+  "tags": [ "dnx", "net46", "syslog", "syslognet.client"],
   "projectUrl": "https://github.com/ojafri/SyslogNet.Client-dnx",
   "licenseUrl": "https://github.com/ojafri/SyslogNet.Client-dnx/blob/master/LICENSE",
 
