@@ -1,0 +1,15 @@
+﻿{
+  "version": "0.1.0-*",
+  "description": "SyslogNet.Client-dnx Class Library",
+  "authors": [ "OJafri" ],
+  "tags": [ "dnx", "net46", "syslog" ],
+  "projectUrl": "https://github.com/ojafri/SyslogNet.Client-dnx",
+  "licenseUrl": "https://github.com/ojafri/SyslogNet.Client-dnx/blob/master/LICENSE",
+
+  "frameworks": {
+    "net46": {
+      "dependencies": {
+      }
+    }
+  }
+}
