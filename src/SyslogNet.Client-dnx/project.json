@@ -1,5 +1,5 @@
 ﻿{
-  "version": "0.2.0-*",
+  "version": "0.2.1-*",
   "title": "SyslogNet.Client-dnx",
   "description": "SyslogNet.Client-dnx Class Library is based on dnx project and is a fork of SyslogNet.Client nuget. The additional feature is to pass X509Certificate when using encrypted TCP",
  

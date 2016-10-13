@@ -1,14 +1,13 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using SyslogNet.Client.Serialization;
 using System.Net.Sockets;
 using System.Net;
-using System.IO;
+using System.Linq;
 
 namespace SyslogNet.Client.Transport
 {
-	public class SyslogUdpSender : ISyslogMessageSender, IDisposable
+    public class SyslogUdpSender : ISyslogMessageSender, IDisposable
 	{
 		private readonly UdpClient udpClient;
         private readonly IPAddress _ipAddress;
@@ -17,7 +16,7 @@ namespace SyslogNet.Client.Transport
 		public SyslogUdpSender(string hostname, int port)
 		{
             var ipAddreses = Dns.GetHostAddressesAsync(hostname).Result;
-            _ipAddress = ipAddreses[0];
+            _ipAddress = ipAddreses.First(n => n.AddressFamily == AddressFamily.InterNetwork);
             _port = port;
             udpClient = new UdpClient();
 		}
