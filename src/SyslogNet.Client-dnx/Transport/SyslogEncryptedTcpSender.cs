@@ -58,13 +58,15 @@ namespace SyslogNet.Client.Transport
 				WriteTimeout = IOTimeout
 			};
 
-			// According to RFC 5425 we MUST support TLS 1.2, but this protocol version only implemented in framework 4.5 and Windows Vista+...
-			((SslStream)transportStream).AuthenticateAsClient(
+            // According to RFC 5425 we MUST support TLS 1.2, but this protocol version only implemented in framework 4.5 and Windows Vista+...
+#if net46
+            ((SslStream)transportStream).AuthenticateAsClient(
 				hostname,
 				CertificateCollection,
 				System.Security.Authentication.SslProtocols.Tls,
 				false
 			);
+#endif
 
 			if (!((SslStream)transportStream).IsEncrypted)
 				throw new SecurityException("Could not establish an encrypted connection");
