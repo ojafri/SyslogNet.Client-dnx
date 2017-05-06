@@ -39,7 +39,8 @@ namespace SyslogNet.Client.Transport
 		{
 			try
 			{
-				tcpClient = new TcpClient(hostname, port);
+                tcpClient = new TcpClient();
+                tcpClient.ConnectAsync(hostname, port);
 				transportStream = tcpClient.GetStream();
 			}
 			catch
@@ -102,13 +103,13 @@ namespace SyslogNet.Client.Transport
 		{
 			if (transportStream != null)
 			{
-				transportStream.Close();
+                transportStream.Dispose();
 				transportStream = null;
 			}
 
 			if (tcpClient != null)
 			{
-				tcpClient.Close();
+				tcpClient.Dispose();
 				tcpClient = null;
 			}
 		}

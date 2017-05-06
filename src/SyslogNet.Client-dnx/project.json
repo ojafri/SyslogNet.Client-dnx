@@ -1,7 +1,8 @@
 ﻿{
-  "version": "0.1.0-*",
+  "version": "0.2.1-*",
   "title": "SyslogNet.Client-dnx",
   "description": "SyslogNet.Client-dnx Class Library is based on dnx project and is a fork of SyslogNet.Client nuget. The additional feature is to pass X509Certificate when using encrypted TCP",
+ 
   "summary": "dnx based SyslogNet.Client Class Library",
   "authors": [ "OJafri" ],
   "tags": [ "dnx", "net46", "syslog", "syslognet.client"],
@@ -12,6 +13,13 @@
     "net46": {
       "dependencies": {
       }
+    },
+    "netcoreapp1.0": {
+      "dependencies": {
+        "Microsoft.NETCore.App": "1.0.1",
+        "System.Runtime.Serialization.Primitives": "4.1.1"
+      },
+      "imports": "dnxcore50"
     }
   }
 }

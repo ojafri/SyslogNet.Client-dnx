@@ -3,7 +3,9 @@ using System.Runtime.Serialization;
 
 namespace SyslogNet.Client
 {
-	[Serializable]
+#if net46
+    [Serializable]
+#endif
 	public class CommunicationsException : Exception
 	{
 		public CommunicationsException()
@@ -18,10 +20,12 @@ namespace SyslogNet.Client
 		{
 		}
 
-		protected CommunicationsException(
+#if net46
+        protected CommunicationsException(
 			SerializationInfo info,
 			StreamingContext context) : base(info, context)
 		{
 		}
+#endif
 	}
 }
